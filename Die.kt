@@ -96,3 +96,29 @@ class Die(private var type: DieType = DieType.D6, private var sides: Int = 6) {
         currentSide = Random.nextInt(1, sides + 1)
     }
 }
+
+class DiceGame {
+    /** Runs the dice game by creating dice, rolling them, and performing specific operations. */
+    fun run() {
+        // Create different sized dice using each constructor
+        val die1 = Die()
+        val die2 = Die(10)
+        val die3 = Die(DieType.D20, 20)
+        // Display initial values
+        println("Initial values:")
+        println("Die 1: ${die1.getCurrentSide()} (${die1.getType().typeName})")
+        println("Die 2: ${die2.getCurrentSide()} (${die2.getType().typeName})")
+        println("Die 3: ${die3.getCurrentSide()} (${die3.getType().typeName})")
+
+        // Roll the dice and display their results
+        die1.roll()
+        die2.roll()
+        die3.roll()
+
+        // Display values after rolling
+        println("After rolling:")
+        println("Die 1: ${die1.getCurrentSide()} (${die1.getType().typeName})")
+        println("Die 2: ${die2.getCurrentSide()} (${die2.getType().typeName})")
+        println("Die 3: ${die3.getCurrentSide()} (${die3.getType().typeName})")
+    }
+}
