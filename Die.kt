@@ -1,5 +1,9 @@
 import kotlin.random.Random
 
+/**
+ * DieType represents the different types or names of dice. Each enum value holds the corresponding
+ * typeName.
+ */
 enum class DieType(val typeName: String) {
     D4("d4"),
     D6("d6"),
@@ -61,11 +65,10 @@ class Die(private var type: DieType = DieType.D6, private var sides: Int = 6) {
      *
      * @return The current side facing up on the die.
      */
-
     fun getCurrentSide(): Int {
         return currentSide
     }
-    
+
     /** Initializes the die object by rolling it once to set a random side. */
     init {
         roll()
